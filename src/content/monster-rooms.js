@@ -151,7 +151,7 @@ elites['黑暗盟约'] = MonsterRoom(
 bosses['远古巨龙'] = MonsterRoom(
 	Monster({
 		name: '远古巨龙',
-		sprite: [8, 2],
+		portrait: '/images/characters/boss.png',
 		hp: random(100, 140),
 		intents: [{damage: 16}, {block: 6}, {damage: 16}, {damage: 7}, {weak: 2}],
 		random: 5,
@@ -160,7 +160,7 @@ bosses['远古巨龙'] = MonsterRoom(
 bosses['史莱姆之王'] = MonsterRoom(
 	Monster({
 		name: '史莱姆之王',
-		sprite: [2, 1],
+		portrait: '/images/characters/boss.png',
 		hp: 62,
 		intents: [
 			{damage: 5},
