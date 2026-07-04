@@ -1,0 +1,93 @@
+---
+import {getRuns} from '../../game/backend.js'
+import Layout from '../layouts/Layout.astro'
+import '../styles/typography.css'
+import '../styles/index.css'
+
+const {runs, total} = await getRuns()
+---
+
+<Layout title="统计与排行榜">
+	<article class="Container">
+		<p><a class="Button" href="/">&larr; 菜单</a></p>
+
+		<header class="Header">
+			<h1 medium>统计与排行榜</h1>
+		</header>
+
+
+		<div class="Box Box--text Box--full">
+			<p>
+				共 <strong>{total}</strong> 场 Slay the Web （原开源项目） 对局的时间线，欢迎浏览。
+			</p>
+		</div>
+
+		<table>
+			<thead>
+				<tr>
+					<th>编号</th>
+					<th>玩家</th>
+					<th>胜负</th>
+					<th>楼层</th>
+					<th align="right" style="min-width: 5.5em">用时</th>
+					<th align="right" style="min-width: 6em">日期</th>
+				</tr>
+			</thead>
+			<tbody>
+				{
+					runs?.length
+						? runs.map((run) => {
+								// const state = run.gameState
+								const date = new Intl.DateTimeFormat('zh-CN', {
+									dateStyle: 'medium',
+									// month: 'short',
+									// timeStyle: 'short',
+									hour12: false,
+								}).format(new Date(run.createdAt))
+
+								let duration = 0
+								if (run.endedAt) {
+									const ms = run.endedAt - run.createdAt
+									const hours = Math.floor(ms / (1000 * 60 * 60))
+									const minutes = Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60))
+									const seconds = Math.floor((ms / 1000) % 60)
+									duration = `${hours > 0 ? hours + 'h ' : ''}${minutes}m ${seconds}s`
+								}
+
+								return (
+									<tr>
+										<td>{run.id}</td>
+										<td><a href={`/stats/run?id=` + run.id}>{run.player}</a></td>
+										<td>{run.won ? '获胜' : '落败'}</td>
+										<td>{run.floor}</td>
+										<td align="right">{duration}</td>
+										<td align="right">{date}</td>
+									</tr>
+								)
+							})
+						: '加载中...'
+				}
+			</tbody>
+		</table>
+		<p>
+			如果你想删除自己的对局记录，<a href="https://matrix.to/#/#slaytheweb:matrix.org">请告诉我</a>。
+		</p>
+	</article>
+</Layout>
+
+<style>
+	table {
+		width: 100%;
+		border-spacing: 0;
+	}
+	tbody {
+		font-size: initial
+	}
+	tbody tr:nth-child(odd) {
+		background-color: hsla(0, 0%, 0%, 0.1);
+	}
+	th,
+	td {
+		text-align: left;
+	}
+</style>

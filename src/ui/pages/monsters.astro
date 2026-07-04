@@ -1,0 +1,53 @@
+---
+import Layout from '../layouts/Layout.astro'
+import '../styles/index.css'
+import {bosses, elites, monsters} from '../../content/monster-rooms.js'
+import {Monster} from '../components/player.js'
+
+const tiers = [
+	{name: '普通怪物', data: monsters},
+	{name: '精英怪物', data: elites},
+	{name: '首领', data: bosses},
+]
+
+const gameState = {
+	player: {
+		powers: {vulnerable: 0, weak: 0, strength: 0, poison: 0, regen: 0},
+	},
+}
+---
+
+<script src="../components/img-sprite.js"></script>
+
+<Layout title="怪物精灵图">
+  <div class="Container">
+    <p><a class="Button" href="/">&larr; 菜单</a></p>
+
+    <div class="Box">
+    	<h2>怪物</h2>
+        <p>游戏中所有<em>怪物房间</em>的列表，分为"普通怪物""精英怪物"和"首领"。</p>
+        <p>另见<a href="/sprites">精灵图</a>。</p>
+    </div>
+
+    <div class="MonsterRooms">
+
+      {tiers.map(tier => {
+        const encounters = Object.entries(tier.data)
+        return (
+        <h2>{tier.name}</h2>
+            <div>
+              {encounters.map(([encounterName, room]) => (
+                <div>
+                  <h3>{encounterName}</h3>
+                  <div row>
+                    {room.monsters.map(monster => (
+                      <Monster model={monster} gameState={gameState} client:load />
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+        )
+      })}
+    </div>
+    </Layout>

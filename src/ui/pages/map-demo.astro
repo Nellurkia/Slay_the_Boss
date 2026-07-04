@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro'
+import '../styles/index.css'
+---
+
+<script src="../components/slay-map-demo.js"></script>
+
+<Layout title="Slay the Boss 原福 地图演示">
+  <div class="Container">
+    <p><a class="Button" href="/">&larr; 菜单</a></p>
+    <p>在这里你可以试玩 Slay the Boss 原福 用来生成地图的函数。</p>
+  </div>
+  <slay-map-demo></slay-map-demo>
+</Layout>
+
+<style>
+  slay-map-demo {
+    display: flex;
+    gap: 0.5rem;
+    > .Box {
+      flex: 25rem;
+    }
+    slay-map {
+      flex: 1;
+      margin-right: 0.5rem;
+      /* min-height: calc(100vh - 5rem); */
+    }
+  }
+</style>
