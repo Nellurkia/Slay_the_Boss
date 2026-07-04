@@ -1,116 +1,141 @@
-# Slay the Web
+# Slay the Boss 原福
 
-A single player deck-building roguelike video card game for the web based on Slay The Spire,  
-a fantastic video game designed by [MegaCrit](https://www.megacrit.com/).
+一款基于卡牌构筑的单人 Roguelike 游戏。  
+你是一颗觉醒的绿大福豆，目标是击败压榨员工的黑心老板文浩！
 
-### [Play on slaytheweb.cards](https://www.slaytheweb.cards/)
+## 🎮 游戏背景
 
-### [Chat on #slaytheweb:matrix.org](https://matrix.to/#/#slaytheweb:matrix.org)
+在现代都市的高楼大厦中，矗立着一家表面光鲜的大公司——**江南原福集团**。
 
-<a href="https://slaytheweb.cards"><img src="https://i.imgur.com/m9CRCsa.png" alt="Screenshot of Slay the Web" width="640"></a>
+老板**文浩**一边压榨员工，让他们无偿加班、过劳工作，一边批量生产**绿大福豆**提供给员工捶打泄愤……
 
-## Background
+终于有一天，一颗普通的绿大福豆觉醒了超能力！
 
-After many runs in the Spire, I got into the theory behind the game. Inspired by the STS modding community, I thought it'd be fun and a great learning experience to try and implement the core logic of the game in JavaScript for the web. And that is what _Slay the Web_ is: a kind of stable, UI agnostic game engine with an example UI for the web.
+它不仅摆脱了被捶打的命运，还发现自己拥有一项神奇的能力：**凡是被它击败的人，都会变成新的绿大福豆**！
 
-## Updates
+于是，这颗觉醒的绿大福豆开始了它的复仇之路。它接连收编了：
+- 实习生
+- 程序员
+- 产品经理
+- 产品负责人
+- 市场部负责人
+- ……
 
-See the CHANGELOG.md file.
+最终，它来到了董事长办公室，准备与终极 BOSS **文浩**展开最后的决战！
 
-## Development
+## 📖 游戏说明
 
-TLDR;
+欢迎来到江南原福集团。这是一家表面光鲜、实则压榨的大公司。
 
-1. Clone the repository
-2. Run `npm install` followed by `npm run dev` to open a local development server.
+你是一颗觉醒的绿大福豆，你的使命是：
+- 一路收编同伴
+- 闯入江南原福集团总部
+- 为员工发声
+- 击败终极 BOSS——文浩
 
-## Documentation
+### 战斗系统
 
-If you're interested in contributing to the game or merely curious how it works:
+**Slay the Boss 原福** 是一款单人卡牌游戏：
 
-- [The documentation](DOCUMENTATION.md)
+- 每回合从抽牌堆中抽 5 张牌
+- 卡牌需要消耗能量才能打出，能量每回合恢复
+- 你的攻击方式包括：
+  - **物理攻击**：拍打、捶打
+  - **精神攻击**：可爱攻击、吐槽攻击
+  - **防御与辅助**：格挡、恢复、施加负面效果
 
-Or browse the code. Especially the game logic includes tons of comments.
+⚠️ **小心**：每当你结束回合，敌人就会开始行动。敌人头顶会提前显示下一步计划。
 
-See the [open issues](https://github.com/oskarrough/slaytheweb/issues).  
-Have an idea? Please [open a new issue](https://github.com/oskarrough/slaytheweb/issues/new).
+### 游戏流程
 
-There are many areas that would make it more fun to play:
+1. 击败当前房间里的所有敌人
+2. 继续深入江南原福集团
+3. 遇见不同职位的员工，将他们收编为绿大福豆
+4. 最终来到董事长办公室，与文浩展开决战
 
-- new cards
-- new powers
-- more monsters
-- expand the map into multiple "worlds" (or acts...)
-- better UI and animations
-- optimize UI for mobile
+**你，能解放整个江南原福集团吗？**
 
-## How to release a new version (aka deploy)
+## 🎯 开发与运行
 
-Every commit to the `main` branch automatically deploys to https://slaytheweb.cards via Cloudflare.
+### 安装依赖
 
-If you open a PR, it'll give you a preview URL where we can see if things are as expected.
+```bash
+npm install
+# 或
+bun install
+```
 
-To update the `CHANGELOG.md`, run `bun run release` and follow the prompts. We do not use GitHub releases.
+### 启动开发服务器
 
-## References
+```bash
+npm run dev
+# 或
+bun run dev
+```
 
-<details>
-  <summary>A collection of related links, inspiration and ideas.</summary>
+### 构建
 
-- FTL, Into The Breach, Darkest Dungeon, Dungeon of the Endless, Spelunky, Rogue Legacy,
-- [Pollywog Games: A history of roguelite deck building games](https://pollywog.games/rgdb/)
-- http://stfj.net/index2.php?project=art/2011/Scoundrel.pdf
-- http://stfj.net/index2.php?year=2018&project=art/2018/Pocket-Run%20Pool
-- http://www.cardcrawl.com/
-- http://www.cardofdarkness.com/
-- https://freesound.org/
-- https://game-icons.net/
-- https://github.com/RonenNess/RPGUI
-- https://hundredrabbits.itch.io/donsol [Source](https://github.com/hundredrabbits/Donsol/tree/master/desktop/sources/scripts)
-- https://itch.io/games/tag-card-game/tag-roguelike
-- https://nathanwentworth.itch.io/deck-dungeon [Source](https://github.com/nathanwentworth/deck-dungeon/)
-- https://www.reddit.com/r/slaythespire/comments/a7lhpq/any_recommended_games_similar_to_slay_the_spire/
-- https://twitter.com/fabynou/status/1212534790672408578
-- https://www.gamasutra.com/blogs/JoshGe/20181029/329512/How_to_Make_a_Roguelike.php
-- https://www.reddit.com/r/roguelikedev/
-- https://www.reddit.com/r/roguelikes/
-- https://klei.com/games/griftlands
-- https://forgottenarbiter.github.io/Is-Every-Seed-Winnable/
-- https://www.cloudfallstudios.com/blog/2020/11/2/game-design-tips-reverse-engineering-slay-the-spires-decisions
-- https://www.cloudfallstudios.com/blog/2018/5/7/guide-deckbuilder-tips-for-beginners-prompts-for-the-experienced-part-23
-- https://mitadmissions.org/blogs/entry/slay-the-spire-as-metaphor/
+```bash
+npm run build
+# 或
+bun run build
+```
 
-### Slay the Spire modding, tools and things
+## 🤝 参与贡献
 
-- https://en.wikipedia.org/wiki/Slay_the_Spire
-- https://slay-the-spire.fandom.com/wiki/Slay_the_Spire_Wiki
-- https://spirelogs.com/
-- https://maybelatergames.co.uk/tools/slaythespire/
-- https://github.com/daviscook477/BaseMod
-- https://github.com/Gremious/StS-DefaultModBase
-- https://github.com/Gremious/StS-DefaultModBase/wiki
-- https://github.com/kiooeht/Hubris/
-- https://github.com/kiooeht/StSLib/wiki/Power-Hooks
-- https://www.gdcvault.com/play/1025731/-Slay-the-Spire-Metrics
-- https://github.com/Dementophobia/slay-the-spire-sensei
-- https://www.rockpapershotgun.com/2018/02/19/why-revealing-all-is-the-secret-of-slay-the-spires-success/
-- [Slay the Spire Reference spreadsheet](https://docs.google.com/spreadsheets/u/1/d/1ZsxNXebbELpcCi8N7FVOTNGdX_K9-BRC_LMgx4TORo4/edit?usp=sharing)
-- [Slay the Spire Discord](https://discord.gg/slaythespire)
-- https://github.com/adnzzzzZ/blog
-- https://forgottenarbiter.github.io/Is-Every-Seed-Winnable/ ([discussion](https://news.ycombinator.com/item?id=23910006))
-- https://www.twitch.tv/telnetthespire
-- [Slay the Spire Reference Spreadsheet](https://docs.google.com/spreadsheets/u/1/d/1ZsxNXebbELpcCi8N7FVOTNGdX_K9-BRC_LMgx4TORo4/edit#gid=1146624812)
-- https://alexdriedger.github.io/SlayTheSpireModding/
+如果你也想让江南原福集团变得更加"精彩"，欢迎加入我们的创作！
 
-### Typeface
+### 你可以：
 
-Licenced from https://mbtype.com/
+- 新增卡牌
+- 设计新的员工角色
+- 制作新的部门场景
+- 扩展新的战斗机制
+- 设计更多 Boss 和剧情
 
-### Open source artwork
+### 卡组编辑器
 
-- http://ronenness.github.io/RPGUI/
-- https://github.com/game-icons/icons
-- https://www.fromoldbooks.org/
-- https://www.oldbookart.com/
+你可以使用游戏内置的卡组编辑器创建属于自己的牌组，但目前暂不支持游戏内自定义卡牌。
 
-</details>
+如果你想真正创造属于自己的卡牌、角色或玩法，欢迎直接联系：
+- **小左**（微信：yuezhihui528）
+
+一起丰富这个不断扩展的世界！
+
+## 🔧 开发者工具
+
+你可以用浏览器的开发者工具查看——甚至修改——游戏中几乎所有的东西。
+
+打开控制台，输入：
+```javascript
+stw
+// 或
+stw.help()
+```
+
+这么做很可能会造出一些奇怪又有趣的效果 😄
+
+## 📚 相关链接
+
+- [原开源项目地图组件演示](https://slaytheweb.cards/dungeon/)
+- [原开源项目更新日志](CHANGELOG.md)
+- [游戏文档](DOCUMENTATION.md)
+
+## 🙏 致谢
+
+本项目由 **D1V.ai 团队**基于开源项目进行二次开发，并结合原创世界观进行了修改与扩展。
+
+### 特别感谢
+
+- **Slay the Spire** - 原版游戏灵感来源，由 [MegaCrit](https://www.megacrit.com/) 开发
+- **[Slay the Web](https://github.com/oskarrough/slaytheweb)** - 开源项目，作者 [oskarrough](https://github.com/oskarrough)
+
+全部功劳归于原作。
+
+## 📄 许可证
+
+详见 [LICENSE](LICENSE) 文件。
+
+---
+
+**让我们一起，用绿大福豆的力量，解放江南原福集团！** 💚
