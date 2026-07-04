@@ -4,9 +4,9 @@
 
 🔥点🔥击🔥即🔥玩🔥
 
-https://slay-slay-d3g2c88il5c345199.webapps.tcloudbase.com/
+中国小伙伴请点击：https://slay-slay-d3g2c88il5c345199.webapps.tcloudbase.com/
 
-https://slay-the-boss.vercel.app/
+For international friends: https://slay-the-boss.vercel.app/
 
 
 ## 🎮 游戏背景
