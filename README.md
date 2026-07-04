@@ -68,6 +68,7 @@ For international friends: https://slay-the-boss.vercel.app/
 - 制作语言切换功能
 - 优化部分美术资源（如部分背景和卡牌）
 - 制作无限模式
+- 制作怪物图鉴
 - 加入一些D1V.ai团队的介绍
 
 ## 🎯 开发与运行
